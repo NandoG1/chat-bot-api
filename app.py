@@ -19,7 +19,7 @@ if GEMINI_API_KEY:
 st.set_page_config(page_title="AI Chatbot", page_icon="-", layout="wide")
 
 if not OPENAI_API_KEY:
-    st.warning("OPENAI_API_KEY not found in .env")
+    st.warning("OPENAI_API_KEY not found in .env (This demo website only have a GEMINI API KEY)")
 if not GEMINI_API_KEY:
     st.warning("GEMINI_API_KEY not found in .env")
 
@@ -39,7 +39,7 @@ with st.sidebar.expander("Advanced Settings"):
     temperature = st.slider("Temperature", 0.0, 1.0, 0.7)
     top_p = st.slider("Top-p", 0.0, 1.0, 0.95)
     top_k = st.slider("Top-k (Gemini only)", 1, 100, 40)
-    max_tokens = st.slider("Max Tokens", 50, 2048, 512)
+    max_tokens = st.slider("Max Tokens", 50, 2048, 2048)
 
 min_budget = 1.0
 max_budget = 5.0
